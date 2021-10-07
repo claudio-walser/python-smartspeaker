@@ -7,10 +7,10 @@ audio_file = "./english.wav"
 
 recognizer = sr.Recognizer()
 with sr.AudioFile(audio_file) as source:
-    audio = r.record(source)
+    audio = recognizer.record(source)
 
 try:
-    print("Google Speech Recognition thinks you said " + r.recognize_google(audio))
+    print("Google Speech Recognition thinks you said " + recognizer.recognize_google(audio))
 except sr.UnknownValueError:
     print("Google Speech Recognition could not understand audio")
 except sr.RequestError as e:
